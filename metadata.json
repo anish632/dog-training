@@ -1,0 +1,5 @@
+{
+  "name": "Service Dog Training Assistant",
+  "description": "An easy-to-use application to help train and manage a service dog, focusing on walking, balance support, and fall detection assistance. This app provides AI-generated training plans and answers to common questions.",
+  "requestFramePermissions": []
+}
