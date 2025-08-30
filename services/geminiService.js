@@ -1,7 +1,5 @@
-
 import { GoogleGenAI, Type } from "@google/genai";
-import { SYSTEM_INSTRUCTION_TRAINER, SYSTEM_INSTRUCTION_QA } from '../constants';
-import type { TrainingPlan } from '../types';
+import { SYSTEM_INSTRUCTION_TRAINER, SYSTEM_INSTRUCTION_QA } from '../constants.js';
 
 if (!process.env.API_KEY) {
   throw new Error("API_KEY environment variable not set");
@@ -34,7 +32,7 @@ const trainingPlanSchema = {
   },
 };
 
-export const getTrainingPlan = async (prompt: string): Promise<TrainingPlan> => {
+export const getTrainingPlan = async (prompt) => {
   try {
     const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
@@ -48,7 +46,7 @@ export const getTrainingPlan = async (prompt: string): Promise<TrainingPlan> => 
     });
     
     const jsonText = response.text.trim();
-    const plan = JSON.parse(jsonText) as TrainingPlan;
+    const plan = JSON.parse(jsonText);
     return plan;
   } catch (error) {
     console.error('Error fetching training plan:', error);
@@ -56,7 +54,7 @@ export const getTrainingPlan = async (prompt: string): Promise<TrainingPlan> => 
   }
 };
 
-export const getAnswer = async (question: string): Promise<string> => {
+export const getAnswer = async (question) => {
   try {
     const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',

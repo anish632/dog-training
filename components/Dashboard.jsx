@@ -1,16 +1,9 @@
-
 import React from 'react';
-import type { TrainingTopic } from '../types';
-import { TRAINING_TOPICS } from '../constants';
-import Card from './common/Card';
-import { QuestionMarkIcon } from './icons/Icons';
+import { TRAINING_TOPICS } from '../constants.js';
+import Card from './common/Card.jsx';
+import { QuestionMarkIcon } from './icons/Icons.jsx';
 
-interface DashboardProps {
-  onSelectTraining: (topic: TrainingTopic) => void;
-  onSelectQA: () => void;
-}
-
-const Dashboard: React.FC<DashboardProps> = ({ onSelectTraining, onSelectQA }) => {
+const Dashboard = ({ onSelectTraining, onSelectQA }) => {
   return (
     <div className="space-y-8">
       <div>

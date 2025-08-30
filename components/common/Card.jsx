@@ -1,14 +1,6 @@
-
 import React from 'react';
 
-interface CardProps {
-  title: string;
-  description: string;
-  icon: React.ComponentType<{ className?: string }>;
-  onClick: () => void;
-}
-
-const Card: React.FC<CardProps> = ({ title, description, icon: Icon, onClick }) => {
+const Card = ({ title, description, icon: Icon, onClick }) => {
   return (
     <button
       onClick={onClick}

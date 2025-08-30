@@ -1,8 +1,7 @@
-
 import React from 'react';
-import { PawPrintIcon } from './icons/Icons';
+import { PawPrintIcon } from './icons/Icons.jsx';
 
-const Header: React.FC = () => {
+const Header = () => {
   return (
     <header className="bg-white shadow-md">
       <div className="max-w-4xl mx-auto py-4 px-4 sm:px-6 md:px-8 flex items-center gap-4">

@@ -1,16 +1,15 @@
-
 import React, { useState } from 'react';
-import { View, TrainingTopic } from './types';
-import Header from './components/Header';
-import Dashboard from './components/Dashboard';
-import TrainingModule from './components/TrainingModule';
-import QASession from './components/QASession';
+import { View } from './constants.js';
+import Header from './components/Header.jsx';
+import Dashboard from './components/Dashboard.jsx';
+import TrainingModule from './components/TrainingModule.jsx';
+import QASession from './components/QASession.jsx';
 
-const App: React.FC = () => {
-  const [currentView, setCurrentView] = useState<View>(View.Dashboard);
-  const [selectedTopic, setSelectedTopic] = useState<TrainingTopic | null>(null);
+const App = () => {
+  const [currentView, setCurrentView] = useState(View.Dashboard);
+  const [selectedTopic, setSelectedTopic] = useState(null);
 
-  const navigateToTraining = (topic: TrainingTopic) => {
+  const navigateToTraining = (topic) => {
     setSelectedTopic(topic);
     setCurrentView(View.Training);
   };

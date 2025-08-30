@@ -1,19 +1,12 @@
-
 import React, { useState, useEffect } from 'react';
-import type { TrainingTopic, TrainingPlan } from '../types';
-import { getTrainingPlan } from '../services/geminiService';
-import Button from './common/Button';
-import Spinner from './common/Spinner';
+import { getTrainingPlan } from '../services/geminiService.js';
+import Button from './common/Button.jsx';
+import Spinner from './common/Spinner.jsx';
 
-interface TrainingModuleProps {
-  topic: TrainingTopic;
-  onBack: () => void;
-}
-
-const TrainingModule: React.FC<TrainingModuleProps> = ({ topic, onBack }) => {
-  const [plan, setPlan] = useState<TrainingPlan | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+const TrainingModule = ({ topic, onBack }) => {
+  const [plan, setPlan] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchPlan = async () => {

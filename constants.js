@@ -1,8 +1,13 @@
+import { LeashIcon, BalanceIcon, AlertIcon, HelpIcon } from './components/icons/Icons.jsx';
 
-import type { TrainingTopic } from './types';
-import { LeashIcon, BalanceIcon, AlertIcon, HelpIcon } from './components/icons/Icons';
+// View enum equivalent
+export const View = {
+  Dashboard: 'DASHBOARD',
+  Training: 'TRAINING',
+  QA: 'QA',
+};
 
-export const TRAINING_TOPICS: TrainingTopic[] = [
+export const TRAINING_TOPICS = [
   {
     id: 'leash',
     title: 'Loose-Leash Walking',

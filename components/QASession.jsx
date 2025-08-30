@@ -1,21 +1,16 @@
-
 import React, { useState } from 'react';
-import { getAnswer } from '../services/geminiService';
-import Button from './common/Button';
-import Spinner from './common/Spinner';
-import { QuestionMarkIcon } from './icons/Icons';
+import { getAnswer } from '../services/geminiService.js';
+import Button from './common/Button.jsx';
+import Spinner from './common/Spinner.jsx';
+import { QuestionMarkIcon } from './icons/Icons.jsx';
 
-interface QASessionProps {
-  onBack: () => void;
-}
+const QASession = ({ onBack }) => {
+  const [question, setQuestion] = useState('');
+  const [answer, setAnswer] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-const QASession: React.FC<QASessionProps> = ({ onBack }) => {
-  const [question, setQuestion] = useState<string>('');
-  const [answer, setAnswer] = useState<string>('');
-  const [loading, setLoading] = useState<boolean>(false);
-  const [error, setError] = useState<string | null>(null);
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!question.trim()) return;
 
