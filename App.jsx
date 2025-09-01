@@ -39,7 +39,7 @@ const App = () => {
   return (
     <div className="min-h-screen bg-slate-100 text-slate-800 font-sans">
       <Header />
-      {!process.env.GEMINI_API_KEY && !process.env.API_KEY && (
+      {!process.env.GEMINI_API_KEY && !process.env.API_KEY && !import.meta.env.VITE_GEMINI_API_KEY && (
         <div className="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mx-4 sm:mx-6 md:mx-8 rounded-r-lg">
           <div className="flex">
             <div className="flex-shrink-0">
